@@ -1,0 +1,249 @@
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 14px;
+  color: #1f2328;
+  background: #f6f7f9;
+}
+
+.app {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100%;
+}
+
+/* ---------- Top toolbar ---------- */
+.toolbar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.toolbar h1 {
+  font-size: 16px;
+  margin: 0 12px 0 0;
+  font-weight: 600;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.field label {
+  color: #57606a;
+}
+
+.field input[type="number"] {
+  width: 64px;
+  padding: 4px 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  font: inherit;
+}
+
+.divider-v {
+  width: 1px;
+  align-self: stretch;
+  background: #e5e7eb;
+}
+
+.mode-group {
+  display: flex;
+  gap: 4px;
+}
+
+.mode-btn {
+  padding: 6px 10px;
+  border: 1px solid #d0d7de;
+  background: #fff;
+  border-radius: 4px;
+  font: inherit;
+  cursor: pointer;
+}
+.mode-btn:hover { background: #f3f4f6; }
+.mode-btn.active {
+  background: #0969da;
+  color: #fff;
+  border-color: #0969da;
+}
+
+/* ---------- Main layout ---------- */
+.main {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  padding: 16px;
+  min-height: 0;
+}
+
+.canvas-wrap {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  overflow: auto;
+}
+
+.canvas-svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  user-select: none;
+}
+
+.side-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  min-height: 0;
+  overflow: auto;
+}
+
+.panel {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+
+.panel h2 {
+  font-size: 13px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: #57606a;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.panel-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 6px 0;
+  align-items: center;
+}
+
+.panel-row label { color: #57606a; }
+
+.panel input[type="number"], .panel select {
+  padding: 4px 6px;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  font: inherit;
+  width: 110px;
+}
+
+.muted { color: #57606a; font-size: 12px; }
+
+.danger-btn {
+  background: #fff;
+  color: #cf222e;
+  border: 1px solid #d0d7de;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font: inherit;
+}
+.danger-btn:hover { background: #ffebe9; }
+
+/* ---------- Cut list ---------- */
+.cutlist {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.cutlist th, .cutlist td {
+  text-align: left;
+  padding: 6px 8px;
+  border-bottom: 1px solid #eef0f2;
+}
+
+.cutlist th {
+  font-weight: 600;
+  color: #57606a;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.cutlist td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ---------- SVG piece styling ---------- */
+.piece {
+  cursor: pointer;
+}
+
+.piece.selected {
+  stroke: #0969da;
+  stroke-width: 0.08;
+}
+
+.piece-ghost {
+  fill: #0969da;
+  fill-opacity: 0.35;
+  pointer-events: none;
+}
+
+.frame-piece { fill: #c8b18a; stroke: #6b5a3f; stroke-width: 0.04; }
+.shelf-piece { fill: #d9c39a; stroke: #6b5a3f; stroke-width: 0.04; }
+.divider-piece { fill: #cfb888; stroke: #6b5a3f; stroke-width: 0.04; }
+
+.grid-line { stroke: #e5e7eb; stroke-width: 0.02; }
+.grid-line.major { stroke: #cdd2d8; stroke-width: 0.03; }
+
+.dim-label {
+  font-size: 1.1px;
+  fill: #57606a;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.cut-label {
+  font-size: 0.8px;
+  fill: #6b7280;
+  font-family: inherit;
+  font-weight: 500;
+}
+
+.cell-dim-label {
+  fill: #4b5563;
+  font-family: inherit;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.dim-strip {
+  stroke: #6b7280;
+  stroke-width: 0.04;
+}
+
+.strip-label {
+  font-size: 1.0px;
+  fill: #1f2937;
+  font-family: inherit;
+  font-weight: 600;
+}
+
+.empty-hint {
+  color: #57606a;
+  font-size: 12px;
+  font-style: italic;
+}

@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "width": 72,
+  "height": 28,
+  "depth": 11.25,
+  "snap": 0.5,
+  "unifiedThickness": true,
+  "thickness": 1,
+  "sidesOutside": false,
+  "sideThickness": 1,
+  "topThickness": 1,
+  "bottomThickness": 1,
+  "defaultShelfThickness": 1,
+  "defaultDividerThickness": 1,
+  "shelves": [
+    {
+      "id": 2,
+      "y": 7,
+      "columnIndex": 0,
+      "thickness": 1
+    },
+    {
+      "id": 4,
+      "y": 20,
+      "columnIndex": 0,
+      "thickness": 1
+    },
+    {
+      "id": 7,
+      "y": 18,
+      "columnIndex": 2,
+      "thickness": 1
+    },
+    {
+      "id": 8,
+      "y": 9,
+      "columnIndex": 2,
+      "thickness": 1
+    },
+    {
+      "id": 12,
+      "y": 13.5,
+      "columnIndex": 1,
+      "thickness": 1
+    }
+  ],
+  "fullDividers": [
+    {
+      "id": 1,
+      "x": 12,
+      "thickness": 1
+    },
+    {
+      "id": 6,
+      "x": 45,
+      "thickness": 1
+    }
+  ],
+  "bayDividers": [
+    {
+      "id": 9,
+      "x": 63,
+      "thickness": 1,
+      "anchorY": 22
+    },
+    {
+      "id": 14,
+      "x": 28.5,
+      "thickness": 1,
+      "anchorY": 19.75
+    },
+    {
+      "id": 15,
+      "x": 28.5,
+      "thickness": 1,
+      "anchorY": 6.25
+    }
+  ],
+  "stockLengthFt": 8,
+  "kerf": 0.125
+}
